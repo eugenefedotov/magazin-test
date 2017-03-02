@@ -1,3 +1,17 @@
-<ul>
-  <li>1111</li>
+<br /><br />
+<div class="cart">
+  <a href="#" data-ui-sref="app.cart">Cart {{Main.countGoods}}</a>
+</div>
+<ul class="items-wrapper">
+  <li class="item" data-ng-repeat="good in Main.goods">
+    <div class="name">Name: {{good.name}}</div>
+    <div class="img"></div>
+    <div class="price">Price: {{good.price}}$</div>
+    <div class="dscr">Description: {{good.dscr}}</div>
+    <div class="in-cart">
+      <button class="btn btn-default" data-ng-click="Main.inCart(good.id)">
+        <i class="glyphicon glyphicon-shopping-cart"></i> In Cart
+      </button>
+    </div>
+  </li>
 </ul>
