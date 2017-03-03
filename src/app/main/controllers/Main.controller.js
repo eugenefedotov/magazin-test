@@ -6,8 +6,14 @@ export default class MainCtrl {
 
     this.$cookies = $cookies;
 
-    this.$cookies.goods = [];
-    this.countGoods = 0;
+    console.log(this.$cookies.get('goods'));
+
+
+    if(!this.$cookies.goods) {
+      this.$cookies.goods = [];
+    }
+
+    this.countGoods = this.$cookies.getObject('goods').length;
 
     this.goods = [
       {
@@ -46,8 +52,10 @@ export default class MainCtrl {
    * @param id
    */
   inCart(id) {
-    this.$cookies.goods.push(id);
-    this.countGoods = this.$cookies.goods.length;
+    let arr = this.$cookies.getObject('goods') || [];
+    arr.push(id);
+    this.$cookies.putObject('goods', arr);
+    this.countGoods = this.$cookies.getObject('goods').length;
   }
 
 }
