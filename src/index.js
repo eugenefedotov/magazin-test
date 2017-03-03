@@ -1,4 +1,5 @@
 import angular from 'angular';
+
 import uiRouter from 'angular-ui-router';
 import angularSanitize from 'angular-sanitize';
 import angularCookies from 'angular-cookies';

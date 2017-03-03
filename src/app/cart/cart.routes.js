@@ -7,9 +7,9 @@ export default function cartRouting($stateProvider) {
       url: '/cart',
       views: {
         'layout': {
-          template: require('../../views/cart.html')
-          /*controller: 'CartCtrl',
-          controllerAs: 'Cart'*/
+          template: require('../../views/cart.html'),
+          controller: 'CartCtrl',
+          controllerAs: 'Cart'
         }
       }
     });
